@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gproduct</title>
     <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="images/g-logo.avif">
 </head>
 <body>
     <header class="header_container">
-        <a class="header_logo" href="index.html"><h2>Pre <p>Game</p> </h2> </a>
+        <a class="header_logo" href="index.html"><h2> G <span>Product</span> </h2> </a>
         <div class="search_box" id="search">
             <div class="input">
                 <img src="images/search (1).png" alt="searchicon">
@@ -34,7 +35,7 @@
         </nav>
         <div class="mobile_header">
                 <div>
-                    <a href="#"> <img onclick="myFunction()" class="mobile_icon" src="images/search (1).png" alt="searchicon"> </a>
+                    <a href="#"> <img onclick="burgerFunction()" class="mobile_icon" src="images/search (1).png" alt="searchicon"> </a>
                     <img onclick="openCloseFunction()" class="mobile_icon" src="images/hamburger-menu-icon-svg-12.jpg" alt="burgericon">
                 </div>
         </div>
@@ -52,51 +53,50 @@
     <section class="main_container">
         <div class="container">
             <div class="box">
-                <a href=""> <img src="images/mobile gaiming photo.png" alt="mobile_icon"> </a>
+               <img onclick="scrollToMobile()" src="images/mobile gaiming photo.png" alt="mobile_icon">
             </div>
             <div class="box">
-                <a href=""> <img src="images/play station img.jpeg" alt="play_station_icon"> </a>
+                <img src="images/play station img.jpeg" alt="play_station_icon">
             </div>
             <div class="box">
-                <a href=""> <img src="images/pc img.jpg" alt="pc_icon"> </a>
+                 <img src="images/pc img.jpg" alt="pc_icon">
             </div>
             <div class="box">
-                <a href=""> <img src="images/gaiming laptop.jpg" alt="laptop_icon"> </a>
+                <img src="images/gaiming laptop.jpg" alt="laptop_icon"> 
             </div>
         </div>
     </section>
     <section class="products">
         <div class="products_box">
-            <div>
-
-            </div>
-            <div>
-
-            </div>
-            <div>
-                
-            </div>
-            <div>
-                
-            </div>
-            <div>
-                
-            </div>
-            <div>
-                
-            </div>
-            <div>
-                
-            </div>
-            <div>
-                
-            </div>
-            <div>
-                
-            </div>
-            <div>
-                
-            </div>
+            <div class="slider-container">
+                <div class="slider">
+                  <div class="slides">
+                    <div id="slides__1" class="slide">
+                        <div> <h1>hello</h1></div>
+                        <div> <h2>hay</h2></div>
+                        <div></div>
+                      <a class="slide__prev" href="#slides__4" title="Next"></a>
+                      <a class="slide__next" href="#slides__2" title="Next"></a>
+                    </div>
+                    <div id="slides__2" class="slide">
+                      <span class="slide__text">2</span>
+                      <a class="slide__prev" href="#slides__1" title="Prev"></a>
+                      <a class="slide__next" href="#slides__3" title="Next"></a>
+                    </div>
+                    <div id="slides__3" class="slide">
+                      <span class="slide__text">3</span>
+                      <a class="slide__prev" href="#slides__2" title="Prev"></a>
+                      <a class="slide__next" href="#slides__4" title="Next"></a>
+                    </div>
+                    <div id="slides__4" class="slide">
+                      <span class="slide__text">4</span>
+                      <a class="slide__prev" href="#slides__3" title="Prev"></a>
+                      <a class="slide__next" href="#slides__1" title="Prev"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
         </div>
     </section>
 
@@ -112,6 +112,10 @@
             <img class="up_arrow" src="images/up-arrow-svgrepo-com.svg" alt="uparrow_icon">
           </div>
     </section>
-    <script src="script.js"></script>
+
+    <section class="footer">
+        
+    </section>
+<script src="script.js"></script>
 </body>
 </html>

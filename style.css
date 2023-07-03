@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@font-face {
+    font-family: myfont;
+    src: url(fonts/Main_Fonts.ttf);
+}
 *{
     margin: 0;
     padding: 0;

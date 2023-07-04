@@ -53,9 +53,8 @@ nav ul li a:hover{
     text-decoration: underline;
     transition: all 0.8s;
     animation-delay: 0.3s;
-    font-size: 20px;
+    scale: 1.1;
     color: #CFC547;
-    letter-spacing: 3px;
     text-shadow: 10px 10px 25px rgb(81,67,21),
     -10px 10px 25px rgb(81,67,21),
     -10px -10px 25px rgb(81,67,21),
@@ -103,20 +102,6 @@ nav ul li a:hover{
 .main_container img{
     cursor: pointer;
 }
-.products_box{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 40px;
-    justify-content: center;
-    gap: 30px;
-}
-
-.products{
-    margin-top: -50px;
-    background-color: #1F2667;;
-    position: relative;
-}
-
 .container {
     display: flex;
     justify-content: center;
@@ -210,13 +195,13 @@ animation: loader 5s infinite;
     .main_container img{
         width: 100%;
     }
-    .products{
-        top: 110px;
-    }
 
 }
 @media (max-width:1024px)  {
     nav{
+        display: none;
+    }
+    .main_container{
         display: none;
     }
     .mobile_header{
@@ -234,6 +219,9 @@ animation: loader 5s infinite;
     }
     .header_container{
         justify-content: space-between;
+    }
+    .products_container{
+        margin-top: 70px;
     }
 }
 .burger_bar{
@@ -302,118 +290,141 @@ animation: loader 5s infinite;
     color: rgb(209, 213, 217);
     font-size: 20px;
 }
-.slider-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 98%;
-}
-
-.slider {
+.Products {
     width: 100%;
-    height: 430px;
-    margin: 20px;
-    text-align: center;
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
-}
-.slides {
+    height: 800px; /* Set the desired height */
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+  }
+.product_info{
     display: flex;
-    overflow: hidden;
-    position: relative;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-    height: 100%;
-}
-.slide:nth-of-type(even) {
-    background-color: rgb(250, 246, 212);
-}
-
-.slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    width: 100%;
-    height: 100%;
-    margin-right: 0px;
-    box-sizing: border-box;
-    background: white;
-    transform-origin: center center;
-    transform: scale(1);
-    scroll-snap-align: center;
-}
-
-.slide__text {
-    font-size: 40px;
-    font-weight: bold;
-    font-family: sans-serif;
-}
-
-.slide a {
     position: absolute;
-    top: 48%;
-    width: 35px;
-    height: 35px;
-    border: solid black;
-    border-width: 0 4px 4px 0;
-    padding: 3px;
-    box-sizing: border-box;
-}
-
-a.slide__prev {
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-    left: 5%;
-}
-
-a.slide__next{
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-    right: 5%;
-}
-.read-article{
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 999;
-  color: #000;
-  background: white;
-  padding: 10px 20px;
-  border-radius: 10px;
-  font-family: arial;
-  text-decoration: none;
-  box-shadow: rgb(50 50 93 / 25%) 0 0 100px -20px, rgb(0 0 0 / 30%) 0 0 60px -15px;
-}
-.read-article:hover{
-    background: #d5d5d5;
-    box-shadow: rgb(50 50 93 / 25%) 0 0 100px -20px, rgb(0 0 0 / 30%) 0 0 60px 0px;
-}
-iframe[sandbox] .read-article{
-  display: none;
-}
-.slide div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90%;
-    width: 26%;
-    background-color: red;
-
-}
-.slide{
-    display: flex;
+    flex-direction: column;
+    margin-top: 250px;
+    left: 52%;
     gap: 20px;
 }
-.top_Product_text{
+.product_info h2{
     font-size: 40px;
+    letter-spacing: 4px;
     font-weight: 500;
-    letter-spacing: 1px;
+}
+.Products p{
+    color: red;
+    font-size: 27px;
+    font-weight: 600;
+}
+.product_info span{
+    font-family: 500;
+    font-size: 20px;
+}
+.btn-box{
+    display: flex;
+    gap: 15px;
+}
+.btn-box button{
+    max-width: 200px;
+    min-width: 100px;
+    min-height: 60px;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    border: solid black 3px;
+}
+.btn-box :nth-child(1){
+    background-color: rgb(222, 0, 0);
+    color: white;
+    border: none;
+}
+.btn-box :nth-child(1):hover{
+    transition: all 0.5s linear;
+    background-color: rgb(246, 29, 29);
+}
+.btn-box :nth-child(2){
+    background-color: rgba(255,0,0, 0 );
+}
+.btn-box :nth-child(2):hover{
+    transition: all 0.5s linear;
+    color: white;
+    background-color: rgb(20, 16, 16);
+}
+.products_box{
+    padding-top: 40px;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    margin-top: 250px;
+    left: 20%;
+    gap: 20px;
+   
+}
+.products_box h2{
+    font-size: 40px;
+    color: white;
+    font-weight: 500;
+    letter-spacing: 4px;
+}
+.products_box span{
+    font-family: 500;
+    font-size: 20px;
     color: white;
 }
-.slide img{
-    height: 100%;
-    width: 100%;
+
+@media (max-width:768px){
+    .Products{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 600px;
+    }   
+    .product_info{
+        border-radius: 4px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px ;
+        top: -220px;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .products_box{
+        border-radius: 4px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px ;
+        top: -220px;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .product_info h2{
+        font-size: 30px;
+        letter-spacing: 0px;
+      
+    }
+    .Products p{
+        font-size: 20px;
+    }
+    .product_info span{
+        font-size: 15px;
+    }
+    .products_container{
+        margin-top: 50px;
+    }
+    .products_box h2{
+        font-size: 30px;
+        letter-spacing: 0px;
+    }
+    .products_box span{
+        font-size: 15px;
+    }
 }

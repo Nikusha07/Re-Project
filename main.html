@@ -8,114 +8,164 @@
     <link rel="stylesheet" href="main.css">
     <link rel="icon" href="images/g-logo.avif">
 </head>
-<body>
-    <header class="header_container">
-        <a class="header_logo" href="index.html"><h2> G <span>Product</span> </h2> </a>
-        <div class="search_box" id="search">
-            <div class="input">
-                <img src="images/search (1).png" alt="searchicon">
-                <input type="text" placeholder="Search Your Products">
-            </div>
-        </div>
-        <nav>
-            <ul>
-                <li>
-                    <a href="#">Main</a>
-                </li>
-                <li>
-                    <a href="#">Abouth Us</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-                <li>
-                    <a href="#">Games</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="mobile_header">
-                <div>
-                    <img onclick="burgerFunction()" class="mobile_icon" src="images/search (1).png" alt="searchicon">
-                    <img onclick="openCloseFunction()" class="mobile_icon" src="images/hamburger-menu-icon-svg-12.jpg" alt="burgericon">
-                </div>
-        </div>
-        <div id="burger" class="burger_bar">
-            <li> <a href="#">Main</a></li>
-            <li> <a href="#">Abouth Us</a></li>
-            <li> <a href="#"> Contact</a></li>
-            <li> <a href="#"> Games </a></li>
-            <li> <a href="#">Giming Pc</a></li>
-            <li> <a href="#"> Giming Laptopt</a></li>
-            <li> <a href="#"> Giming Mobile</a></li>
-            <li> <a href="#">Play Station Console</a></li>
-        </div>
-    </header>
-    <section class="main_container">
-        <div class="container">
-            <div class="box">
-               <img onclick="scrollToMobile()" src="images/mobile gaiming photo.png" alt="mobile_icon">
-            </div>
-            <div class="box">
-                <img src="images/play station img.jpeg" alt="play_station_icon">
-            </div>
-            <div class="box">
-                 <img onclick="scrollToPc()" src="images/pc img.jpg" alt="pc_icon">
-            </div>
-            <div class="box">
-                <img src="images/gaiming laptop.jpg" alt="laptop_icon"> 
-            </div>
-        </div>
+<body >
+    <section id="loader" class="loader_box">
+        <main>
+            <svg class="ip" viewBox="0 0 256 128" width="256px" height="128px" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#5ebd3e" />
+                        <stop offset="33%" stop-color="#ffb900" />
+                        <stop offset="67%" stop-color="#f78200" />
+                        <stop offset="100%" stop-color="#e23838" />
+                    </linearGradient>
+                    <linearGradient id="grad2" x1="1" y1="0" x2="0" y2="0">
+                        <stop offset="0%" stop-color="#e23838" />
+                        <stop offset="33%" stop-color="#973999" />
+                        <stop offset="67%" stop-color="#009cdf" />
+                        <stop offset="100%" stop-color="#5ebd3e" />
+                    </linearGradient>
+                </defs>
+                <g fill="none" stroke-linecap="round" stroke-width="16">
+                    <g class="ip__track" stroke="#ddd">
+                        <path d="M8,64s0-56,60-56,60,112,120,112,60-56,60-56"/>
+                        <path d="M248,64s0-56-60-56-60,112-120,112S8,64,8,64"/>
+                    </g>
+                    <g stroke-dasharray="180 656">
+                        <path class="ip__worm1" stroke="url(#grad1)" stroke-dashoffset="0" d="M8,64s0-56,60-56,60,112,120,112,60-56,60-56"/>
+                        <path class="ip__worm2" stroke="url(#grad2)" stroke-dashoffset="358" d="M248,64s0-56-60-56-60,112-120,112S8,64,8,64"/>
+                    </g>
+                </g>
+            </svg>
+        </main>
     </section>
-
-    <section class="products_container">
-        <div id="1" class="Products">
-            <div class="product_info">
-                <h2>REDMAGIC 8 Pro</h2>
-                <p>UP YOUR GAME</p>
-                <span>Experience infinite evolution with REDMAGIC 8 Pro!</span>
-                <span>starting at</span>
-                <div class="btn-box">
-                    <button>BUY NOW</button>
-                    <button>LEARN MORE</button>
-                </div>
+    <section class="content">
+        <header class="header_container">
+            <a class="header_logo" href="index.html"><h2> G <span>Product</span> </h2> </a>
+            <div class="user_box">
+                <img class="user_icon" src="https://freesvg.org/img/abstract-user-flat-1.png" alt="user_icon">
+                <p class="username" id="username" ></p>
+            </div>  
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">Main</a>
+                    </li>
+                    <li>
+                        <a href="#">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                    <li>
+                        <a href="#">Games</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="mobile_header">
+                    <div>
+                        <img onclick="openCloseFunction()" class="mobile_icon" src="images/hamburger-menu-icon-svg-12.jpg" alt="burgericon">
+                    </div>
             </div>
-        </div>
-        <div id="2" class="Products">
-            <div class="products_box">
-                <h2>REDMAGIC 7S Pro</h2>
-                <p>ARMORED FOR VICTORY</p>
-                <span>suit up for battle with the REDMAGIC 7S Pro!</span>
-                <span>starting at</span>
-                <div class="btn-box">
-                    <button>BUY NOW</button>
-                    <button>LEARN MORE</button>
-                </div>
+            <div id="burger" class="burger_bar">
+                <li> <a href="#">Main</a></li>
+                <li> <a href="#">About Us</a></li>
+                <li> <a href="#"> Contact</a></li>
+                <li> <a href="#"> Giming Laptopt</a></li>
+                <li> <a href="#"> Giming Mobile</a></li>
+                <li> <a href="#">Play Station Console</a></li>
             </div>
-        </div>
-        <div id="3" class="Products">
-            <div class="products_box">
-                <h2>REDMAGIC 8 Pro</h2>
-                <p>UP YOUR GAME</p>
-                <span>Experience infinite evolution with REDMAGIC 8 Pro!</span>
-                <span>starting at</span>
-                <div class="btn-box">
-                    <button>BUY NOW</button>
-                    <button>LEARN MORE</button>
+        </header>
+        <section class="main_container">
+            <div class="container">
+                <div class="box">
+                <img onclick="scrollToMobile()" src="images/mobile gaiming photo.png" alt="mobile_icon">
+                </div>
+                <div class="box">
+                    <img src="images/play station img.jpeg" alt="play_station_icon">
+                </div>
+                <div class="box">
+                    <img onclick="scrollToPc()" src="images/pc img.jpg" alt="pc_icon">
+                </div>
+                <div class="box">
+                    <img src="images/gaiming laptop.jpg" alt="laptop_icon"> 
                 </div>
             </div>
-        </div>
+        </section>
 
-    </section>
-    <section class="scroll_container">
-        <div id="jsScroll" class="scroll" onclick="scrollToTop();">
-            <img class="up_arrow" src="images/up-arrow-svgrepo-com.svg" alt="uparrow_icon">
-          </div>
-    </section>
+        <section class="products_container">
+            <div id="1" class="Products">
+                <div id="product_info" class="product_info">
+                    <h2>REDMAGIC 8 Pro</h2>
+                    <p>UP YOUR GAME</p>
+                    <span>Experience infinite evolution with REDMAGIC 8 Pro!</span>
+                    <span>starting at</span>
+                    <div class="btn-box">
+                        <button>BUY NOW</button>
+                        <button id="product_info">LEARN MORE</button>
+                    </div>
+                </div>
+                <div id="product_after_box" class="after_box">
+                    <div class="after_box_product_info">
+                        <div id="close_box" class="close_box">
+                            <h1> X </h1>
+                        </div>
+                        <div class="img_box">
+                            <img src="https://www.techandroids.com/wp-content/uploads/2022/07/Nubia-Red-Magic-7S-Pro-photos-2.jpg" alt="mobile_photo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="2" class="Products">
+                <div id="product_info_second" class="products_box">
+                    <h2>REDMAGIC 7S Pro</h2>
+                    <p>ARMORED FOR VICTORY</p>
+                    <span>suit up for battle with the REDMAGIC 7S Pro!</span>
+                    <span>starting at</span>
+                    <div class="btn-box">
+                        <button>BUY NOW</button>
+                        <button>LEARN MORE</button>
+                    </div>
+                </div>
+                <div class="after_box">
+                    <div class="after_box_product_info">
+                        <div id="imgboxSecond" class="img_box">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="3" class="Products">
+                <div  class="products_box">
+                    <h2 class="pc_info">REDMAGIC 8 Pro</h2>
+                    <p>UP YOUR GAME</p>
+                    <span>Experience infinite evolution with REDMAGIC 8 Pro!</span>
+                    <span>starting at</span>
+                    <div class="btn-box">
+                        <button>BUY NOW</button>
+                        <button>LEARN MORE</button>
+                    </div>
+                </div>
+                <div class="after_box">
+                    <div class="after_box_product_info">
+                        
+                    </div>
+                </div>
+            </div>
 
-    
-    <section class="footer">
+        </section>
+        <section class="container">
+            <div>
 
+            </div>
+        </section>
+        
+        <section class="footer">
+            <div id="jsScroll" class="scroll" onclick="scrollToTop();">
+                <img class="up_arrow" src="images/up-arrow-svgrepo-com.svg" alt="uparrow_icon">
+            </div>
+        </section>
+    <script src="script.js"></script>
     </section>
-<script src="script.js"></script>
 </body>
 </html>

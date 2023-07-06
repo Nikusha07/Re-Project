@@ -11,14 +11,89 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root {
+	--hue: 223;
+	--bg: hsl(var(--hue),90%,95%);
+	--fg: hsl(var(--hue),90%,5%);
+	--trans-dur: 0.3s;
+}
+.loader_box{
+   background-color: #3f3f3f;
+   width: 100%;
+   height: 100%;
+}
 
+main {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%);
+}
+.ip {
+	width: 16em;
+	height: 8em;
+}
+.ip__track {
+	stroke: hsl(var(--hue),90%,90%);
+	transition: stroke var(--trans-dur);
+}
+.ip__worm1,
+.ip__worm2 {
+	animation: worm1 2s linear infinite;
+}
+.ip__worm2 {
+	animation-name: worm2;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: hsl(var(--hue),90%,5%);
+		--fg: hsl(var(--hue),90%,95%);
+	}
+	.ip__track {
+		stroke: hsl(var(--hue),90%,15%);
+	}
+}
+
+/* Animation */
+@keyframes worm1 {
+	from {
+		stroke-dashoffset: 0;
+	}
+	50% {
+		animation-timing-function: steps(1);
+		stroke-dashoffset: -358;
+	}
+	50.01% {
+		animation-timing-function: linear;
+		stroke-dashoffset: 358;
+	}
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+@keyframes worm2 {
+	from {
+		stroke-dashoffset: 358;
+	}
+	50% {
+		stroke-dashoffset: 0;
+	}
+	to {
+		stroke-dashoffset: -358;
+	}
+}
+.content{
+    display: none;
+}
 .header_container{
     display: flex;
     width: 100%;
     height: 70px;
-    position: fixed;
-    background: rgb(63,94,251);
-    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(52,1,11,1) 100%);
+    position: fixed;   
+    background: rgb(43,52,52);
+    background: linear-gradient(0deg, rgba(43,52,52,1) 0%, rgba(199,12,12,1) 100%);
     align-items: center;
     top: 0;
     z-index: 1;
@@ -73,7 +148,7 @@ nav ul li a:hover{
 
 }
 .header_container h2:hover{
-    letter-spacing: 2px;
+    scale: 1.1;
     transition: all linear 0.5s;
 }
 .header_container span{
@@ -87,8 +162,21 @@ nav ul li a:hover{
     color: rgb(5, 6, 6);
 
 }
+.username{
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    margin-left: 20px;
+    letter-spacing: 2px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.user_icon{
+    width: 35px;
+    margin-left: 20px;
+    cursor: pointer;
+    fill: white;
+}
 .main_container{
-    max-width: 1920px;
+
     margin: 0 auto; 
     display: flex;
     justify-content: space-between;
@@ -97,10 +185,12 @@ nav ul li a:hover{
     overflow: hidden;
     margin-top: 70px;
     height: 600px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -22px inset, rgba(0, 0, 0, 0.4) 0px 50px 64px 0px inset;
 
 }
 .main_container img{
     cursor: pointer;
+    mix-blend-mode: color-dodge;
 }
 .container {
     display: flex;
@@ -251,44 +341,12 @@ animation: loader 5s infinite;
     animation-delay: 0.5s;
     font-size: 29px;
 }
-#search{
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    height: 0px;
-    z-index: -1;
-    justify-content: inherit;
-    padding-left: 15%;
-    padding-top: 3%;
-    width: 100%;
-    background-color: rgba(22, 22, 23, 0.99);;
-}
-#search input{
-    height: 8%;
-    width: auto;
-    color: white;
-    font-size: 25px;
-    background-color: rgba(22, 22, 23, 1);
-    border: none;
-}
-#search input:focus{
-    outline: none;
-}
-#search ::placeholder{
-    font-size: 25px;
-    border: none;
-    color: rgb(184, 194, 204);
-}
+
 .input{
     display: flex;
     justify-content: inherit;
     align-items: start;
     gap: 4px;
-}
-#search span{
-    color: rgb(209, 213, 217);
-    font-size: 20px;
 }
 .Products {
     width: 100%;
@@ -302,7 +360,7 @@ animation: loader 5s infinite;
     position: absolute;
     flex-direction: column;
     margin-top: 250px;
-    left: 52%;
+    left: 60%;
     gap: 20px;
 }
 .product_info h2{
@@ -358,7 +416,17 @@ animation: loader 5s infinite;
     position: absolute;
     flex-direction: column;
     margin-top: 250px;
-    left: 20%;
+    left: 5%;
+    gap: 20px;
+   
+}
+.products_box_px{
+    padding-top: 40px;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    margin-top: 250px;
+    left: 5%;
     gap: 20px;
    
 }
@@ -386,7 +454,7 @@ animation: loader 5s infinite;
         border-radius: 4px;
         position: absolute;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-50%)!important;
         padding: 10px ;
         top: -220px;
         width: 90%;
@@ -397,8 +465,7 @@ animation: loader 5s infinite;
     .products_box{
         border-radius: 4px;
         position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+        left: 0;
         padding: 10px ;
         top: -220px;
         width: 90%;
@@ -427,4 +494,73 @@ animation: loader 5s infinite;
     .products_box span{
         font-size: 15px;
     }
+    .header_logo{
+        display: none;
+    }
+    .username{
+        font-size: 24px;
+    }
+    
+}
+.after_box{
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.user_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
+.after_box_product_info{
+    width: 60%;
+    height: 75%;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: relative;
+    padding: 20px;
+}
+.img_box{
+    display: flex;
+    width: 45%;
+    height: 75%;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+}
+.img_box img{
+    width: 100%;
+    height: 100%;
+}
+#product_info {
+    transition: opacity 0.5s ease, transform 2.5s ease;
+  }
+#product_info_second{
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 2.5s ease;
+}
+.footer{
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #111;
+    height: auto;
+    padding-top: 40px;
+    color: #fff;
+}
+.close_box{
+    position: absolute;
+    font-size: 30px;
+    color: wheat;
+    right: 0;
+    top: 0;
 }

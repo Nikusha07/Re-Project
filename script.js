@@ -52,7 +52,7 @@ function scrollToMobile() {
 let productsImgArray = [
   {
     Id : 1 ,
-    url : "https:cdn.shopify.com/s/files/1/0024/0684/2441/files/REDMAGIC-8-Pro-Gaming-Smartphone-Banner-PC_2x_827d7263-2aeb-4645-a34b-854ad4147c6a_x670.jpg?v=1680840925",
+    url : "https://cdn.shopify.com/s/files/1/0024/0684/2441/files/REDMAGIC-8-Pro-Gaming-Smartphone-Banner-PC_2x_827d7263-2aeb-4645-a34b-854ad4147c6a_x670.jpg?v=1680840925",
   },
   {
     Id :2 , 
@@ -105,3 +105,102 @@ setResponsiveBackground();
 
 // Add event listener for screen resize
 window.addEventListener('resize', setResponsiveBackground);
+
+// Function to handle the scroll event
+function handleScroll() {
+  const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+  const divToShow = document.getElementById('product_info');
+  
+  // Check if the window width is 1920px or above
+  if (window.innerWidth >= 1920) {
+    if (scrollPosition > 300) {
+      // Show the div with animation
+      divToShow.style.opacity = '1';
+      divToShow.style.transform = 'translateY(0)';
+    } else {
+      // Hide the div
+      divToShow.style.opacity = '0';
+      divToShow.style.transform = 'translateY(40px)';
+    }
+  } else {
+    // Reset the styles if the window width is less than 1920px
+    divToShow.style.opacity = '1';
+    divToShow.style.transform = 'translateY(0)';
+  }
+}
+
+// Add the scroll event listener
+window.addEventListener('scroll', handleScroll);
+
+
+function handleSecondScroll() {
+  const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+  const divToShow = document.getElementById('product_info_second');
+  
+  // Check if the window width is 1920px or above
+  if (window.innerWidth >= 1920) {
+    if (scrollPosition > 1000) {
+      // Show the div with animation
+      divToShow.style.opacity = '1';
+      divToShow.style.transform = 'translateY(0)';
+    } else {
+      // Hide the div
+      divToShow.style.opacity = '0';
+      divToShow.style.transform = 'translateY(40px)';
+    }
+  } else {
+    // Reset the styles if the window width is less than 1920px
+    divToShow.style.opacity = '1';
+    divToShow.style.transform = 'translateY(0)';
+  }
+}
+
+
+// Add the scroll event listener
+window.addEventListener('scroll', handleSecondScroll);
+
+
+let localName = localStorage.getItem('user');
+console.log(localName);
+
+// Retrieve user data from localStorage
+const userData = localStorage.getItem('user');
+
+if (userData) {
+  // Parse the JSON data into an object
+  const user = JSON.parse(userData);
+
+  // Access the username
+  const username = user.username;
+
+  // Update the HTML to display the username
+  const usernameElement = document.getElementById('username');
+  usernameElement.textContent = username;
+}
+function showContent() {
+  var helloMessageElement = document.getElementById('loader');
+  helloMessageElement.style.display = 'none';
+  var contentElement = document.querySelector('.content');
+  contentElement.style.display = 'block';
+}
+
+// Wait for 2 seconds and then show the content
+setTimeout(showContent, 1000);
+
+
+let inBoxImg = [
+  {
+    Id: 1,
+    url: "https://eu.redmagic.gg/pages/redmagic-8-pro"
+  },
+  {
+    Id: 2,
+    url: "https://www.techandroids.com/wp-content/uploads/2022/07/Nubia-Red-Magic-7S-Pro-photos-2.jpg",
+  }
+];
+const showButton = document.getElementById("product_info");
+const targetDiv = document.getElementById("product_after_box");
+
+showButton.addEventListener("click", function() {
+  targetDiv.style.display = "flex";
+});

@@ -32,6 +32,7 @@ signUpForm.addEventListener('submit', function(event) {
     localStorage.setItem('user', JSON.stringify(user));
 
     signUpForm.reset();
+    
 });
 function loginModalFunction() {
     var signUp = document.getElementById("Sign_up_box")
@@ -44,22 +45,3 @@ function loginModalFunction() {
       signIn.style.display = "none"
     }
   }
-
-  fetch('https://cdn.shopify.com/s/files/1/0024/0684/2441/files/REDMAGIC-8-Pro-Gaming-Smartphone-Banner-Pad_2x_6fcda3e6-e0f9-4788-9414-4be494c5ccd4_x540@3x.jpg?v=1680765797')
-  .then(response => {
-    if (response.ok) {
-      return response.blob();
-    }
-    throw new Error('Network response was not ok.');
-  })
-  .then(blobData => {
-    const fileInfo = {
-      fileName: 'TK3tWkYFABsmjsphPho.woff2',
-      fileSize: blobData.size,
-      fileType: blobData.type,
-    };
-    console.log('File Information:', fileInfo);
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });

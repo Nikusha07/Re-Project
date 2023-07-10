@@ -52,10 +52,10 @@
                         <a href="#">Main</a>
                     </li>
                     <li>
-                        <a href="#">About Us</a>
+                        <a onclick="scrollToBottom()" href="#">About Us</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a onclick="scrollToBottom()" href="#">Contact</a>
                     </li>
                 </ul>
             </nav>
@@ -66,9 +66,8 @@
             </div>
             <div id="burger" class="burger_bar">
                 <li> <a href="#">Main</a></li>
-                <li> <a href="#">About Us</a></li>
-                <li> <a href="#"> Contact</a></li>
-                <li> <a href="#">Play Station Console</a></li>
+                <li> <a onclick="scrollToBottom()" href="#">About Us</a></li>
+                <li> <a onclick="scrollToBottom()" href="#"> Contact</a></li>
             </div>
         </header>
         <section class="main_container">
@@ -76,14 +75,14 @@
                 <div class="box">
                 <img onclick="scrollToMobile()" src="images/mobile gaiming photo.png" alt="mobile_icon">
                 </div>
-                <div class="box">
-                    <img src="images/play station img.jpeg" alt="play_station_icon">
+                <div class="box" >
+                    <img onclick="showAlert()" src="images/play station img.jpeg" alt="play_station_icon">
                 </div>
                 <div class="box">
                     <img onclick="scrollToPc()" src="images/pc img.jpg" alt="pc_icon">
                 </div>
                 <div class="box">
-                    <img src="images/gaiming laptop.jpg" alt="laptop_icon"> 
+                    <img onclick="showAlert()" src="images/gaiming laptop.jpg" alt="laptop_icon"> 
                 </div>
             </div>
         </section>
@@ -94,9 +93,9 @@
                     <h2>REDMAGIC 8 Pro</h2>
                     <p>UP YOUR GAME</p>
                     <span>Experience infinite evolution with REDMAGIC 8 Pro!</span>
-                    <span>starting at</span>
+                    <span>starting at <span id="product_price_1"></span> </span>
                     <div class="btn-box">
-                        <button>BUY NOW</button>
+                        <button onclick="showAlertAfterBuyProduct()">BUY NOW</button>
                         <button id="product_info_button">LEARN MORE</button>
                     </div>
                 </div>
@@ -116,15 +115,15 @@
                 </div>
             </div>
         </section>
-        <section >
+        <section  >
             <div id="2" class="Products">
                 <div id="product_info_second" class="products_box">
                     <h2>REDMAGIC 7S Pro</h2>
                     <p>ARMORED FOR VICTORY</p>
                     <span>suit up for battle with the REDMAGIC 7S Pro!</span>
-                    <span>starting at</span>
+                    <span>starting at <span id="product_price_2"></span></span>
                     <div class="btn-box">
-                        <button>BUY NOW</button>
+                        <button onclick="showAlertAfterBuyProduct()">BUY NOW</button>
                         <button id="product_info">LEARN MORE</button>
                     </div>
                 </div>
@@ -146,9 +145,9 @@
                     <h2 class="pc_info">REDMAGIC PC GAIMING</h2>
                     <p>Dive Into Gaiming Reality</p>
                     <span>Experience infinite evolution with REDMAGIC 8 Pro!</span>
-                    <span>starting at</span>
+                    <span>starting at <span id="product_price_3"></span></span>
                     <div class="btn-box">
-                        <button>BUY NOW</button>
+                        <button onclick="showAlertAfterBuyProduct()">BUY NOW</button>
                         <button >LEARN MORE</button>
                     </div>
                 </div>
@@ -169,13 +168,43 @@
 
             </div>
         </section>
+        <footer id="footer" class="footer">
+            <div class="waves">
+              <div class="wave" id="wave1"></div>
+              <div class="wave" id="wave2"></div>
+              <div class="wave" id="wave3"></div>
+              <div class="wave" id="wave4"></div>
+            </div>
+            <ul class="social-icon">
+              <li class="social-icon__item"><a class="social-icon__link" href="#">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a></li>
+              <li class="social-icon__item"><a class="social-icon__link" href="#">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a></li>
+              <li class="social-icon__item"><a class="social-icon__link" href="#">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                </a></li>
+              <li class="social-icon__item"><a class="social-icon__link" href="#">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a></li>
+            </ul>
+            <ul class="menu">
+              <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+              <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+              <li class="menu__item"><a class="menu__link" href="#">+995-598-18-86-35</a></li>
+              <li class="menu__item"><a class="menu__link" href="#">nikatefnadze3@gmai.com</a></li>
+
         
-        <section class="footer">
+            </ul>
+            <p>&copy;2023 Author | Nika tefnadze</p>
             <div id="jsScroll" class="scroll" onclick="scrollToTop();">
                 <img class="up_arrow" src="images/up-arrow-svgrepo-com.svg" alt="uparrow_icon">
             </div>
-        </section>
+          </footer>
     <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     </section>
 </body>
 </html>

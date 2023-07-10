@@ -213,3 +213,36 @@ showButton.addEventListener("click", function() {
   const closeButton = document.getElementById('close_box')
   closeButton.addEventListener("click", closeDiv);
 
+  const url = 'https://fakestoreapi.com/products';
+
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      const prices = data.map(product => product.price);
+  
+      let productPrice1 = document.getElementById('product_price_1');
+      productPrice1.textContent = prices[0] + "$";
+  
+      let productPrice2 = document.getElementById('product_price_2');
+      productPrice2.textContent = prices[12] + "$";
+  
+      let productPrice3 = document.getElementById('product_price_3');
+      productPrice3.textContent = prices[13] + "$";
+  
+      console.log('Prices:', prices);
+    })
+    .catch(error => {
+      console.log('Error:', error);
+    });
+    function showAlert() {
+      alert("მარაგი ამოიწურა ძალიან მალე დაემატება");
+  }
+  function showAlertAfterBuyProduct() {
+    alert("გილოცავთ შენაძენს");
+}
+function scrollToBottom() {
+  window.scrollTo({
+    top: 3000,
+    behavior: 'smooth'
+  });
+}

@@ -1,4 +1,4 @@
- 
+
 window.addEventListener('scroll', e => {
   var el = document.getElementById('jsScroll');
   if(window.scrollY > 200) {
@@ -185,7 +185,7 @@ function showContent() {
 }
 
 // Wait for 2 seconds and then show the content
-setTimeout(showContent, 1000);
+setTimeout(showContent, 2000);
 
 
 let inBoxImg = [
@@ -198,9 +198,18 @@ let inBoxImg = [
     url: "https://www.techandroids.com/wp-content/uploads/2022/07/Nubia-Red-Magic-7S-Pro-photos-2.jpg",
   }
 ];
-const showButton = document.getElementById("product_info");
+const showButton = document.getElementById("product_info_button");
 const targetDiv = document.getElementById("product_after_box");
 
 showButton.addEventListener("click", function() {
   targetDiv.style.display = "flex";
 });
+
+  function closeDiv() {
+    var signInBox = document.getElementById('product_after_box')
+    signInBox.style.display = 'none'
+  }
+  
+  const closeButton = document.getElementById('close_box')
+  closeButton.addEventListener("click", closeDiv);
+

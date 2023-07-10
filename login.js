@@ -9,18 +9,18 @@ function signIn() {
         alert('Invalid username or password. Please try again.');
     }
 
-
     document.querySelector('#sign_in_box form').reset();
 }
 
 const signInForm = document.querySelector('#sign_in_box form');
 signInForm.addEventListener('submit', function(event) {
-    event.preventDefault(); 
-    signIn(); 
+    event.preventDefault();
+    signIn();
 });
+
 const signUpForm = document.querySelector('.sign_up_lable');
 signUpForm.addEventListener('submit', function(event) {
-    event.preventDefault(); 
+    event.preventDefault();
     const username = document.querySelector('.sign_up_lable input[type="text"]').value;
     const email = document.querySelector('.sign_up_lable input[type="email"]').value;
     const password = document.querySelector('.sign_up_lable input[type="password"]').value;
@@ -32,16 +32,28 @@ signUpForm.addEventListener('submit', function(event) {
     localStorage.setItem('user', JSON.stringify(user));
 
     signUpForm.reset();
-    
+    loginModalFunction(); // Open sign-in modal after registration
 });
+
 function loginModalFunction() {
-    var signUp = document.getElementById("Sign_up_box")
-    var signIn = document.getElementById("sign_in_box")
+    var signUp = document.getElementById("Sign_up_box");
+    var signIn = document.getElementById("sign_in_box");
     if (signIn.style.display === "none") {
-      signIn.style.display = "flex"
-      signUp.style.display = "none"
+        signIn.style.display = "flex";
+        signUp.style.display = "none";
     } else {
-      signUp.style.display = "flex" ; 
-      signIn.style.display = "none"
+        signUp.style.display = "flex";
+        signIn.style.display = "none";
     }
-  }
+}
+
+// Call loginModalFunction() after user registration
+// Assuming you have a registration process elsewhere in your code
+// where you handle successful registration.
+registerUser(); // Call your registration function
+
+function registerUser() {
+    // Your registration logic here
+    // After successfully registering the user, call loginModalFunction()
+    loginModalFunction();
+}

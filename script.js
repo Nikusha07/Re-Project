@@ -203,40 +203,41 @@ const targetDiv = document.getElementById("product_after_box");
 
 showButton.addEventListener("click", function() {
   targetDiv.style.display = "flex";
+
 });
 
-  function closeDiv() {
-    var signInBox = document.getElementById('product_after_box')
-    signInBox.style.display = 'none'
-  }
-  
-  const closeButton = document.getElementById('close_box')
-  closeButton.addEventListener("click", closeDiv);
+function closeDiv() {
+  var signInBox = document.getElementById('product_after_box')
+  signInBox.style.display = 'none'
+}
 
-  const url = 'https://fakestoreapi.com/products';
+const closeButton = document.getElementById('close_box')
+closeButton.addEventListener("click", closeDiv);
 
-  fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      const prices = data.map(product => product.price);
-  
-      let productPrice1 = document.getElementById('product_price_1');
-      productPrice1.textContent = prices[0] + "$";
-  
-      let productPrice2 = document.getElementById('product_price_2');
-      productPrice2.textContent = prices[12] + "$";
-  
-      let productPrice3 = document.getElementById('product_price_3');
-      productPrice3.textContent = prices[13] + "$";
-  
-      console.log('Prices:', prices);
-    })
-    .catch(error => {
-      console.log('Error:', error);
-    });
-    function showAlert() {
-      alert("მარაგი ამოიწურა ძალიან მალე დაემატება");
-  }
+// API 
+const url = 'https://fakestoreapi.com/products';
+fetch(url)
+  .then(response => response.json())
+  .then(data => {
+    const prices = data.map(product => product.price);
+
+    let productPrice1 = document.getElementById('product_price_1');
+    productPrice1.textContent = prices[0] + "$";
+
+    let productPrice2 = document.getElementById('product_price_2');
+    productPrice2.textContent = prices[12] + "$";
+
+    let productPrice3 = document.getElementById('product_price_3');
+    productPrice3.textContent = prices[13] + "$";
+
+    console.log('Prices:', prices);
+  })
+  .catch(error => {
+    console.log('Error:', error);
+  });
+  function showAlert() {
+    alert("მარაგი ამოიწურა ძალიან მალე დაემატება");
+}
   function showAlertAfterBuyProduct() {
     alert("გილოცავთ შენაძენს");
 }
@@ -245,4 +246,18 @@ function scrollToBottom() {
     top: 3000,
     behavior: 'smooth'
   });
+}
+function checkLocalStorage() {
+  if (localStorage.getItem("user") === null) {
+    alert("Please register!");
+    window.location.href = "index.html";
+  }
+}
+function showProductAfter(targetId) {
+  const productAfterDiv = document.getElementById(targetId);
+  productAfterDiv.style.display = "flex";
+}
+function hideProductAfter(targetId) {
+  const productAfterDiv = document.getElementById(targetId);
+  productAfterDiv.style.display = "none";
 }

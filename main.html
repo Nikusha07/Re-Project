@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:url"                content="http://127.0.0.1:5500/main.html#" />
+    <meta property="og:type"               content="G product" />
+    <meta property="og:title"              content="Buy best Product Here" />
+    <meta property="og:description"        content="How much does culture influence creative thinking?" />
+    <meta property="og:image"              content="https://cdn.shopify.com/s/files/1/0024/0684/2441/files/banner_redmagic-7s-pro_phone_2x_07c06b18-970c-410e-b461-c80deb391085_x680.jpg?v=1672929646" />
     <title>Gproduct</title>
     <link rel="stylesheet" href="main.css">
     <link rel="icon" href="images/g-logo.avif">
 </head>
-<body >
+<body onload="checkLocalStorage()" >
     <section id="loader" class="loader_box">
         <main>
             <svg class="ip" viewBox="0 0 256 128" width="256px" height="128px" xmlns="http://www.w3.org/2000/svg">
@@ -86,7 +91,6 @@
                 </div>
             </div>
         </section>
-
         <section class="products_container">
             <div id="1" class="Products">
                 <div id="product_info" class="product_info">
@@ -105,8 +109,20 @@
                             <img id="close_box" src="https://flaticons.net/icon.php?slug_category=mobile-application&slug_icon=close" alt="close icon">
                         </div>
                         <div class="detail_information_div">
-                            <p>Model</p> <span>Redmagic 8 Pro</span>
-                            
+                            <div class="about_product">
+                                <p> MODEL :</p>
+                                <p> RAM :</p>
+                                <p> CPU : </p>
+                                <p> Video :</p>
+                                <p> Announced :</p>
+                            </div>
+                            <div class="description">
+                                <p> Redmagic 8 pro</p>
+                                <p> 8Gb</p>
+                                <p> Octa-core</p>
+                                <p> 1080p@30/60fps </p>
+                                <p> 2021, June 18 </p>
+                            </div>
                         </div>
                         <div class="img_box">
                             <img src="https://www.techandroids.com/wp-content/uploads/2022/07/Nubia-Red-Magic-7S-Pro-photos-2.jpg" alt="mobile_photo">
@@ -124,13 +140,32 @@
                     <span>starting at <span id="product_price_2"></span></span>
                     <div class="btn-box">
                         <button onclick="showAlertAfterBuyProduct()">BUY NOW</button>
-                        <button id="product_info">LEARN MORE</button>
+                        <button onclick="showProductAfter('product_after_box_second')" id="product_info">LEARN MORE</button>
                     </div>
                 </div>
-                <div id="product_after_box" class="after_box">
+                <div id="product_after_box_second" class="after_box">
                     <div class="after_box_product_info">
                         <div class="close_box">
-                            <img id="close_box" src="https://flaticons.net/icon.php?slug_category=mobile-application&slug_icon=close" alt="close icon">
+                            <img onclick="hideProductAfter('product_after_box_second')" src="https://flaticons.net/icon.php?slug_category=mobile-application&slug_icon=close" alt="close icon">
+                        </div>
+                        <div class="detail_information_div">
+                            <div class="about_product">
+                                <p> MODEL :</p>
+                                <p> RAM :</p>
+                                <p> CPU : </p>
+                                <p> Video :</p>
+                                <p> Announced :</p>
+                            </div>
+                            <div class="description">
+                                <p> Redmagic pc</p>
+                                <p> 12Gb</p>
+                                <p> Octa-core</p>
+                                <p> 4k@30/60fps </p>
+                                <p> 2023, March 26 </p>
+                            </div>
+
+
+                            
                         </div>
                         <div class="img_box">
                             <img src="https://www.techandroids.com/wp-content/uploads/2022/07/Nubia-Red-Magic-7S-Pro-photos-2.jpg" alt="mobile_photo">
@@ -148,24 +183,38 @@
                     <span>starting at <span id="product_price_3"></span></span>
                     <div class="btn-box">
                         <button onclick="showAlertAfterBuyProduct()">BUY NOW</button>
-                        <button >LEARN MORE</button>
+                        <button  onclick="showProductAfter('product_after_box_pc')" id="product_info" >LEARN MORE</button>
                     </div>
                 </div>
-                <div id="product_after_box" class="after_box">
+                <div id="product_after_box_pc" class="after_box">
                     <div class="after_box_product_info">
                         <div class="close_box">
-                            <img id="close_box" src="https://flaticons.net/icon.php?slug_category=mobile-application&slug_icon=close" alt="close icon">
+                            <img onclick="hideProductAfter('product_after_box_pc')" src="https://flaticons.net/icon.php?slug_category=mobile-application&slug_icon=close" alt="close icon">
+                        </div>
+                        <div class="detail_information_div">
+                            <div class="about_product">
+                                <p> MODEL :</p>
+                                <p> RAM :</p>
+                                <p> CPU : </p>
+                                <p> Screen :</p>
+                                <p> Announced :</p>
+                            </div>
+                            <div class="description">
+                                <p> Redmagic pc</p>
+                                <p> 32Gb</p>
+                                <p> I 12Th Gen</p>
+                                <p> 4k Ultra </p>
+                                <p> 2022, May 20 </p>
+                            </div>
+
+
+                            
                         </div>
                         <div class="img_box">
-                            <img src="https://www.techandroids.com/wp-content/uploads/2022/07/Nubia-Red-Magic-7S-Pro-photos-2.jpg" alt="mobile_photo">
+                            <img src="https://global.redmagic.gg/cdn/shop/files/REDMAGIC-PC-Gaming-Banner-MOB_2x_6d5ff8a6-d592-44e3-9899-0d4743a4410d_x680.jpg?v=1680754489" alt="mobile_photo">
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section class="container">
-            <div>
-
             </div>
         </section>
         <footer id="footer" class="footer">
@@ -176,24 +225,24 @@
               <div class="wave" id="wave4"></div>
             </div>
             <ul class="social-icon">
-              <li class="social-icon__item"><a class="social-icon__link" href="#">
+              <li class="social-icon__item"><a class="social-icon__link" href="https://www.facebook.com/mr.tefnadze">
                   <ion-icon name="logo-facebook"></ion-icon>
                 </a></li>
-              <li class="social-icon__item"><a class="social-icon__link" href="#">
+              <li class="social-icon__item"><a class="social-icon__link" href="https://twitter.com/i/flow/login?redirect_after_login=%2F">
                   <ion-icon name="logo-twitter"></ion-icon>
                 </a></li>
-              <li class="social-icon__item"><a class="social-icon__link" href="#">
+              <li class="social-icon__item"><a class="social-icon__link" href="https://www.linkedin.com/">
                   <ion-icon name="logo-linkedin"></ion-icon>
                 </a></li>
-              <li class="social-icon__item"><a class="social-icon__link" href="#">
+              <li class="social-icon__item"><a class="social-icon__link" href="https://www.instagram.com/">
                   <ion-icon name="logo-instagram"></ion-icon>
                 </a></li>
             </ul>
             <ul class="menu">
               <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
-              <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+              <li class="menu__item"><a class="menu__link" href="#footer">Contact</a></li>
               <li class="menu__item"><a class="menu__link" href="#">+995-598-18-86-35</a></li>
-              <li class="menu__item"><a class="menu__link" href="#">nikatefnadze3@gmai.com</a></li>
+              <li class="menu__item"><a class="menu__link" href="https://mail.google.com/mail/u/0/">nikatefnadze3@gmai.com</a></li>
 
         
             </ul>

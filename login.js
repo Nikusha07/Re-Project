@@ -46,14 +46,8 @@ function loginModalFunction() {
         signIn.style.display = "none";
     }
 }
-
-// Call loginModalFunction() after user registration
-// Assuming you have a registration process elsewhere in your code
-// where you handle successful registration.
-registerUser(); // Call your registration function
+registerUser();
 
 function registerUser() {
-    // Your registration logic here
-    // After successfully registering the user, call loginModalFunction()
     loginModalFunction();
 }
